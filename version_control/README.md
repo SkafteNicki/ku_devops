@@ -17,19 +17,18 @@ Secondly, it is important to note that Github is not git! Github is the dominati
 hosting repositories but that does not mean that they are the only one providing free repository hosting
 (see [bitbucket](https://bitbucket.org/product/) or [gitlab](https://about.gitlab.com/)) for some other examples).
 
-That said we will be using git and Github throughout this course. It is a requirement for passing this course that
-you create a public repository with your code and use git to upload any code changes. How much you choose to integrate
-this into your own projects depends, but you are at least expected to be familiar with git+github.
-
+That said we will be using git and Github in these exercises.
 <p align="center">
   <img src="../figures/git.png" height="400," >
+  <br>
   <a href="https://xkcd.com/1597/"> Image credit </a>
 </p>
 
 ## Initial config
 
 1. [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your computer and make sure
-   that your installation is working by writing `git help` in a terminal and it should show you the help message for git.
+   that your installation is working by writing `git help` in a terminal and it should show you the help message
+   for git.
 
 2. Create a [github](https://github.com/) account if you do not already have one.
 
@@ -50,19 +49,18 @@ The most simple way to think of version control, is that it is just nodes with l
   <img src="../figures/git_branch.png" width="1000," >
 </p>
 
-Each node, which we call a *commit* is uniquely identified by a hash string. Each node, stores what our code
-looked like at that point in time (when we made the commit) and using the hash codes we can easily
-revert to a specific point in time.
+Each node, which we call a *commit* is uniquely identified by a hash string. Each node, stores what our code looked
+like at that point in time (when we made the commit) and using the hash codes we can easily revert to a specific point
+in time.
 
-The commits are made up of local changes that we make to our code. A basic workflow for
-adding commits are seen below
+The commits are made up of local changes that we make to our code. A basic workflow for adding commits are seen below
 
 <p align="center">
   <img src="../figures/git_structure.PNG" width="1000," >
 </p>
 
-Assuming that we have made some changes to our local *working directory* and that we
-want to get these updates to be online in the *remote repository* we have to do the following steps:
+Assuming that we have made some changes to our local *working directory* and that we want to get these updates to
+be online in the *remote repository* we have to do the following steps:
 
 * First we run the command `git add`. This will move our changes to the *staging area*. While changes are in the
   staging area we can very easily revert them (using `git restore`). There have therefore not been assigned a unique
@@ -87,8 +85,7 @@ working together on the same project.
 
 ## Exercises
 
-1. In your github account create an repository, where the intention is that you upload the code from the final
-   exercise from yesterday
+1. In your github account create an repository, where the intention is to upload and version control a script
 
    1. After creating the repository, clone it to your computer
 
@@ -96,7 +93,8 @@ working together on the same project.
       git clone https://github.com/my_user_name/my_repository_name.git
       ```
 
-   2. Move/copy the three files from yesterday into the repository (and any other that you made)
+   2. Create/Copy/Move the `simple_classifier.py` file and the `requirements.txt` file from the last virtual environment
+      exercises into this repository.
 
    3. Add the files to a commit by using `git add` command
 
@@ -120,52 +118,23 @@ working together on the same project.
    try changing back to master afterwards. You should hopefully see whatever you added on the branch
    is not present on the main branch.
 
-3. If you do not already have a cloned version of this repository belonging to the course, make sure to make one!
-   I am continuously updating/changing some of the material during the course and I therefore recommend that you
-   each day before the lecture do a `git pull` on your local copy
+3. Try to make a couple of commits to either your newly created branch or your main branch, lets say at least two.
+   Afterwards try executing
 
-4. Git may seems like a waste of time when solutions like dropbox, google drive ect exist, and it is
-   not completely untrue when you are only one or two working on a project. However, these file management
-   systems falls short when hundreds to thousands of people work together. For this exercise you will
-   go through the steps of sending an open-source contribution:
+   ```bash
+   git log
+   ```
 
-   1. Go online and find a project you do not own, where you can improve the code. For simplicity you can
-      just choose the repository belonging to the course. Now fork the project by clicking the *Fork* button.
-      ![forking](../figures/forking.PNG)
-      This will create a local copy of the repository which you have complete writing access to. Note that
-      code updates to the original repository does not update code in your local repository.
+   which will give you info about the last couple of commits. Try to figure out how you can rollback to a previous
+   commit? Hint: you need to use the `git checkout` command + the commit hash you get from `git log`.
 
-   2. Clone your local fork of the project using `git clone`.
-
-   3. As default your local repository will be on the `main branch` (HINT: you can check this with the
-      `git status` command). It is good practice to make a new branch when working on some changes. Use
-      the `git branch` command followed by the `git checkout` command to create a new branch.
-
-   4. You are now ready to make changes to the repository. Try to find something to improve (any spelling mistakes?).
-      When you have made the changes, do the standard git cycle: `add -> commit -> push`
-
-   5. Go online to the original repository and go the `Pull requests` tab. Find `compare` botton and
-      choose the to compare the `master branch` of the original repo with the branch that you just created
-      in your own repository. Check the diff on the page to make sure that it contains the changes you have made.
-
-   6. Write a bit about the changes you have made and click `Create pull request` :)
-
-5. Forking a repository has the consequence that your fork and the repository that you forked can diverge. To
-   mitigate this we can set what is called an *remote upstream*. Take a look on this
-   [page](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork)
-   , and set a remote upstream for the repository you just forked.
-
-6. After setting the upstream branch, we need to pull and merge any update. Take a look on this
-   [page](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
-   and figure out how to do this.
-
-7. As a final exercise we want to simulate a *merge conflict*, which happens when two users try to commit changes
+3. As a final exercise we want to simulate a *merge conflict*, which happens when two users try to commit changes
    to exactly same lines of code in the codebase, and git is not able to resolve how the different commits should be
    integrated.
 
-   1. In your browser, open your favorite repository (it could be the one you just worked on), go to any file of
-      your choosing and click the edit button (see image below) and make some change to the file. For example, if
-      you choose a python file you can just import some random packages at the top of the file. Commit the change.
+   1. In your browser, open your repository, go to any file of your choosing and click the edit button (see image below)
+      and make some change to the file. For example, if you choose a python file you can just import some random
+      packages at the top of the file. Commit the change.
       <p align="center">
          <img src="../figures/git_edit.PNG" width="1000">
       </p>
