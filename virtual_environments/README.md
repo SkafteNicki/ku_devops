@@ -16,7 +16,8 @@ The workflow presented in these exercises for managing dependencies are as follo
 
 It is most likely not the optimal way of doing things but where conda shines over other dependency managers is that it
 support all three major operating systems (Windows, OS, Linux) the best. Therefore, it is a great tool for teaching
-about virtual environments.
+about virtual environments. Additionally, many local compute clusters on universities only allows you to work on the
+cluster if you use virtual environments through conda.
 
 In the future you may be interested in trying out other environment managers. We can recommend
 [venv](https://docs.python.org/3/library/venv.html), [pipenv](https://pipenv.pypa.io/en/latest/),
@@ -70,9 +71,13 @@ In the future you may be interested in trying out other environment managers. We
    ```
 
    Where X.Y.Z is the particular version of that package. Construct a `requirements.txt` file containing the
-   dependencies you just installed to run the script.
+   dependencies you just installed to run the script. Remember to specify the exact version you have used!
 
-8. When you think you have managed to create the file, lets test that it works. Execute these three commands:
+8. We are often interested in listing only the bare minimum necessary to run our code in the `requirements.txt` file.
+   If you have written more than 2 dependencies in the last exercise, you actually have too many. Try figuring out what
+   two are necessary?
+
+9. When you think you have managed to create the file, lets test that it works. Execute these three commands:
 
    ```
    conda create -y -n "newenv" python=3.11 & conda activate newenv & pip install -r requirements.txt & python simple_classifier.py
@@ -82,8 +87,9 @@ In the future you may be interested in trying out other environment managers. We
    one line does. If it completes without errors, congratulations on creating your first reproduceabile virtual
    environment.
 
-6. Hopefully you will be using multiple environment in the future and forget from time to time what you called them.
-   Which `conda` commando gives you a list of all the environments that you have created?
+10. Hopefully you will be using multiple environment in the future and forget from time to time what you called them.
+    Which `conda` commando gives you a list of all the environments that you have created? Hint: look at this
+    [conda cheat sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
-7. Finally, make sure you also know how to delete unused environments as these can fill up your laptop. Figure out the
-   command to remove the `newenv` environment created in the previous exercise.
+11. Finally, make sure you also know how to delete unused environments as these can fill up your laptop. Figure out the
+    command to remove the `newenv` environment created in the previous exercise.

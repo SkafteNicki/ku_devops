@@ -4,23 +4,25 @@ from matplotlib.colors import ListedColormap
 from sklearn import neighbors, datasets
 from sklearn.inspection import DecisionBoundaryDisplay
 
-n_neighbors = 15
 
-# import some data to play with
-iris = datasets.load_iris()
+if __name__ == "__main__":
+    n_neighbors = 15
 
-# we only take the first two features. We could avoid this ugly
-# slicing by using a two-dim dataset
-X = iris.data[:, :2]
-y = iris.target
+    # import some data to play with
+    iris = datasets.load_iris()
 
-# Create color maps
-cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
-cmap_bold = ["darkorange", "c", "darkblue"]
+    # we only take the first two features. We could avoid this ugly
+    # slicing by using a two-dim dataset
+    X = iris.data[:, :2]
+    y = iris.target
 
-for weights in ["uniform", "distance"]:
+    # Create color maps
+    cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
+    cmap_bold = ["darkorange", "c", "darkblue"]
+
+
     # we create an instance of Neighbours Classifier and fit the data.
-    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
+    clf = neighbors.KNeighborsClassifier(n_neighbors)
     clf.fit(X, y)
 
     _, ax = plt.subplots()
@@ -45,8 +47,5 @@ for weights in ["uniform", "distance"]:
         alpha=1.0,
         edgecolor="black",
     )
-    plt.title(
-        "3-Class classification (k = %i, weights = '%s')" % (n_neighbors, weights)
-    )
-
-plt.show()
+    plt.title(f"3-Class classification (k =  {n_neighbors}")
+    plt.show()
