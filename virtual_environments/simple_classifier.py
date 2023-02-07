@@ -20,7 +20,6 @@ if __name__ == "__main__":
     cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
     cmap_bold = ["darkorange", "c", "darkblue"]
 
-
     # we create an instance of Neighbours Classifier and fit the data.
     clf = neighbors.KNeighborsClassifier(n_neighbors)
     clf.fit(X, y)
