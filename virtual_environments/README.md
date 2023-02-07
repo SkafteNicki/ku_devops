@@ -1,7 +1,7 @@
 # Virtual environments
 
 <p align="center">
-  <img src="../figures/virtual_environments.png" width="300">
+  <img src="../figures/virtual_environments.png" width="200">
 </p>
 
 In these exercises we are going to be looking at how we can use `conda` to control dependencies when we are working on

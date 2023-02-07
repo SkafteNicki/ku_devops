@@ -1,7 +1,7 @@
 # Code testing
 
 <p align="center">
-  <img src="../figures/code_testing.png" width="300">
+  <img src="../figures/code_testing.png" width="200">
 </p>
 
 Code testing is an essential part of what we call *continuous integration (CI)* within DevOps/MLOps. Continuous X

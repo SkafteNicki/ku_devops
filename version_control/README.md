@@ -1,7 +1,7 @@
 # Version control
 
 <p align="center">
-  <img src="../figures/version_control.png" width="300">
+  <img src="../figures/version_control.png" width="200">
 </p>
 
 Proper collaboration with other people will require that you can work on the same codebase in an organized manner.

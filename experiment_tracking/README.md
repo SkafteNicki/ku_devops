@@ -1,7 +1,7 @@
 # Experiment tracking
 
 <p align="center">
-  <img src="../figures/experiment_tracking.png" width="300">
+  <img src="../figures/experiment_tracking.png" width="200">
 </p>
 
 Experiment logging or model monitoring is an important part of understanding what is going on with your model. It can
@@ -70,7 +70,7 @@ results.
       you go to the *Overview* tab for a specific experiment, like the image below:
 
       <p align="center">
-         <img src="../figures/weights_and_biases1.PNG" width="500">
+         <img src="../figures/weights_and_biases1.PNG" width="600">
       </p>
 
       As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
@@ -91,7 +91,7 @@ results.
    the image below) that can give a nice condensed overview of your experiments.
 
    <p align="center">
-      <img src="../figures/weights_and_biases2.PNG" width="500">
+      <img src="../figures/weights_and_biases2.PNG" width="1000">
    </p>
 
 7. Wandb can log a lot more than just scalar values. This could be a image (numpy array), a histogram or a matplotlib
