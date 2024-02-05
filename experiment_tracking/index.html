@@ -587,7 +587,7 @@ results.</p>
     use (HINT: if you forgot to copy the API key, you can find it under settings).</p>
 </li>
 <li>
-<p>Next install wandb on your laptop</p>
+<p>Next, install wandb on your laptop</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>wandb
 </span></code></pre></div>
 </li>
@@ -595,19 +595,19 @@ results.</p>
 <p>Now connect to your wandb account</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wandb<span class="w"> </span>login
 </span></code></pre></div>
-<p>you will be asked to provide the 40 length API key. The connection should be remain open to the wandb server
-even when you close the terminal, such that you do not have to login each time. If using <code>wandb</code> in a notebook
+<p>you will be asked to provide the 40-length API key. The connection should remain open to the wandb server
+even when you close the terminal, such that you do not have to log in each time. If using <code>wandb</code> in a notebook
 you need to manually close the connection using <code>wandb.finish()</code>.</p>
 </li>
 <li>
-<p>With it all setup we are now ready to incorporate <code>wandb</code> into our code. The interface is fairly simple, and
+<p>With the setup done, we are now ready to incorporate <code>wandb</code> into our code. The interface is fairly simple, and
     the <a href="https://docs.wandb.ai">docs</a> are fairly well written to get you through the exercises (HINT: the two methods
     you need to call are <code>wandb.init</code> and <code>wandb.log</code>).</p>
 <ol>
 <li>
-<p>We have provided a sample script called <code>wandb_script.py</code> that agains implements a small classification model
-    on the iris-dataset. Add <code>wandb.init</code> and <code>wandb.log</code> in the appropriate places such that wandb is initilized
-    correctly and such that both <em>accuracy, f1, negative log likelihood</em> gets logged.</p>
+<p>We have provided a sample script called <code>wandb_script.py</code> that again implements a small classification model
+    on the iris-dataset. Add <code>wandb.init</code> and <code>wandb.log</code> in the appropriate places such that wandb is initialized
+    correctly and such that both <em>accuracy, f1, negative log likelihood</em> get logged.</p>
 </li>
 <li>
 <p>When you are done, try running the script:</p>
@@ -616,13 +616,13 @@ you need to manually close the connection using <code>wandb.finish()</code>.</p>
 <p>In particular look at the output that gets written.</p>
 </li>
 <li>
-<p>Next go to the webpage and lookup the project you created and logged something to. You should hopefully see one
-    experiment logged, which is not that interesting at the moment. However, we can checkout one important feature if
-    you go to the <em>Overview</em> tab for a specific experiment, like the image below:</p>
+<p>Next, go to the webpage and lookup the project you created and logged something to. You should hopefully see one
+    experiment logged, which is not that interesting at the moment. However, we can checkout one important feature 
+    if you go to the <em>Overview</em> tab for a specific experiment, like the image below:</p>
 <p><p align="center">
 <a class="glightbox" href="../figures/weights_and_biases1.PNG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../figures/weights_and_biases1.PNG" width="600"></a>
 </p></p>
-<p>As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
+<p>As you hopefully can see, we get the exact Python version, git commit, command used etc. to run the experiment,
 which should make it completely reproducible!</p>
 </li>
 </ol>
@@ -638,17 +638,17 @@ combinations.</p>
 </li>
 <li>
 <p>If you managed to do the last part, you should hopefully have logged multiple experiments now. Look at your project
-    page again in your webbrowser. You should see all your experiments. In particular checkout the <code>Table</code> tab (as in
-    the image below) that can give a nice condensed overview of your experiments.</p>
+    page again in your web browser. You should see all your experiments. In particular check out the <code>Table</code> tab (as in
+    the image below) which can give a nice condensed overview of your experiments.</p>
 <p><p align="center">
 <a class="glightbox" href="../figures/weights_and_biases2.PNG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../figures/weights_and_biases2.PNG" width="1000"></a>
 </p></p>
 </li>
 <li>
 <p>Wandb can log a lot more than just scalar values. This could be an image (numpy array), a histogram or a matplotlib
-    figure. In all cases the logging is still going to use <code>wandb.log</code> but you need extra calls to <code>wandb.Image</code> etc.
-    depending on what you choose to log. Add the following code to the <code>wandb_script.py</code> at the end and afterwards
-    figure out how to call <code>wandb.log</code> to log the figure:</p>
+    figure. In all cases, the logging is still going to use <code>wandb.log</code> but you need extra calls to <code>wandb.Image</code> etc.
+    depending on what you choose to log. Add the following code to the <code>wandb_script.py</code> at the end and afterward figure 
+    out how to call <code>wandb.log</code> to log the figure:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Plot also the training points</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
@@ -677,7 +677,7 @@ combinations.</p>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">wandb</span><span class="o">.</span><span class="n">sklearn</span><span class="o">.</span><span class="n">plot_precision_recall</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_probas</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">wandb</span><span class="o">.</span><span class="n">sklearn</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 </span></code></pre></div>
-<p>and run the script again (using whatever model you like). You may not understand what each command actually plot,
+<p>and run the script again (using whatever model you like). You may not understand what each command plots,
 but hopefully, this will be more clear later on. The important part is that you can see how a lot of information can
 be logged about a single experiment.</p>
 </li>
