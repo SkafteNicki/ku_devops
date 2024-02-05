@@ -35,7 +35,7 @@ results.
     free to choose what you want. When you are logged in you should get an API key of length 40. Copy this for later
     use (HINT: if you forgot to copy the API key, you can find it under settings).
 
-2. Next install wandb on your laptop
+2. Next, install wandb on your laptop
 
     ```bash
     pip install wandb
@@ -47,17 +47,17 @@ results.
     wandb login
     ```
 
-    you will be asked to provide the 40 length API key. The connection should be remain open to the wandb server
-    even when you close the terminal, such that you do not have to login each time. If using `wandb` in a notebook
+    you will be asked to provide the 40-length API key. The connection should remain open to the wandb server
+    even when you close the terminal, such that you do not have to log in each time. If using `wandb` in a notebook
     you need to manually close the connection using `wandb.finish()`.
 
-4. With it all setup we are now ready to incorporate `wandb` into our code. The interface is fairly simple, and
+4. With the setup done, we are now ready to incorporate `wandb` into our code. The interface is fairly simple, and
     the [docs](https://docs.wandb.ai) are fairly well written to get you through the exercises (HINT: the two methods
     you need to call are `wandb.init` and `wandb.log`).
 
-    1. We have provided a sample script called `wandb_script.py` that agains implements a small classification model
-        on the iris-dataset. Add `wandb.init` and `wandb.log` in the appropriate places such that wandb is initilized
-        correctly and such that both *accuracy, f1, negative log likelihood* gets logged.
+    1. We have provided a sample script called `wandb_script.py` that again implements a small classification model
+        on the iris-dataset. Add `wandb.init` and `wandb.log` in the appropriate places such that wandb is initialized
+        correctly and such that both *accuracy, f1, negative log likelihood* get logged.
 
     2. When you are done, try running the script:
 
@@ -67,15 +67,15 @@ results.
 
         In particular look at the output that gets written.
 
-    3. Next go to the webpage and lookup the project you created and logged something to. You should hopefully see one
-        experiment logged, which is not that interesting at the moment. However, we can checkout one important feature if
-        you go to the *Overview* tab for a specific experiment, like the image below:
+    3. Next, go to the webpage and lookup the project you created and logged something to. You should hopefully see one
+        experiment logged, which is not that interesting at the moment. However, we can checkout one important feature 
+        if you go to the *Overview* tab for a specific experiment, like the image below:
 
         <p align="center">
         <img src="../figures/weights_and_biases1.PNG" width="600">
         </p>
 
-        As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
+        As you hopefully can see, we get the exact Python version, git commit, command used etc. to run the experiment,
         which should make it completely reproducible!
 
 5. The `wandb_script.py` already supports using different models by passing them in as an argument when running the 
@@ -90,17 +90,17 @@ results.
     combinations.
 
 6. If you managed to do the last part, you should hopefully have logged multiple experiments now. Look at your project
-    page again in your webbrowser. You should see all your experiments. In particular checkout the `Table` tab (as in
-    the image below) that can give a nice condensed overview of your experiments.
+    page again in your web browser. You should see all your experiments. In particular check out the `Table` tab (as in
+    the image below) which can give a nice condensed overview of your experiments.
 
     <p align="center">
     <img src="../figures/weights_and_biases2.PNG" width="1000">
     </p>
 
 7. Wandb can log a lot more than just scalar values. This could be an image (numpy array), a histogram or a matplotlib
-    figure. In all cases the logging is still going to use `wandb.log` but you need extra calls to `wandb.Image` etc.
-    depending on what you choose to log. Add the following code to the `wandb_script.py` at the end and afterwards
-    figure out how to call `wandb.log` to log the figure:
+    figure. In all cases, the logging is still going to use `wandb.log` but you need extra calls to `wandb.Image` etc.
+    depending on what you choose to log. Add the following code to the `wandb_script.py` at the end and afterward figure 
+    out how to call `wandb.log` to log the figure:
 
     ```python
     import seaborn as sns
@@ -136,7 +136,7 @@ results.
     wandb.sklearn.plot_confusion_matrix(y_test, y_pred, labels)
     ```
 
-    and run the script again (using whatever model you like). You may not understand what each command actually plot,
+    and run the script again (using whatever model you like). You may not understand what each command plots,
     but hopefully, this will be more clear later on. The important part is that you can see how a lot of information can
     be logged about a single experiment.
 

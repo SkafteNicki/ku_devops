@@ -10,8 +10,7 @@ hide:
 
 # MLOps for data scientists
 
-Webpage: <https://skaftenicki.github.io/ku_devops/>
-To get started, clone the repository:
+Webpage: <https://skaftenicki.github.io/ku_devops/>. To get started, clone the repository:
 
 ```bash
 git clone https://github.com/SkafteNicki/ku_devops
