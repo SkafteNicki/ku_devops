@@ -1,17 +1,21 @@
-# Code testing
+---
+hide:
+  - navigation
+  - toc
+---
 
-<p align="center">
-  <img src="../figures/code_testing.png" width="200">
-</p>
+![Logo](../figures/code_testing.png){ align=right width="200"}
+
+# Code testing
 
 Code testing is an essential part of what we call *continuous integration (CI)* within DevOps/MLOps. Continuous X
 assumes that we have a (long) developer pipeline (see image below) where we want to make some changes to our code e.g:
 
 * Update our training data or data processing
 * Update our model architecture
-* Something else...
+* Something else ...
 
-Basically any code change we will expect will have a influence on the final result. The problem with
+Basically, any code change we will expect will have a influence on the final result. The problem with
 doing changes to the start of our pipeline is that we want the change to propagate all the way through
 to the end of the pipeline.
 

@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # MLOps for data scientists
 
 <p align="center">

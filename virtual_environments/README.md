@@ -1,8 +1,13 @@
-# Virtual environments
+---
+hide:
+  - navigation
+  - toc
+---
 
-<p align="center">
-  <img src="../figures/virtual_environments.png" width="200">
-</p>
+![Logo](../figures/virtual_environments.png){ align=right width="200"}
+
+
+# Virtual environments
 
 Python is a great programming language and this is mostly due to its vast ecosystem of packages. No matter what you want
 to do, there is probably a package that can get you started. Just try to remember when the last time you wrote a program
