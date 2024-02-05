@@ -603,32 +603,29 @@ you need to manually close the connection using <code>wandb.finish()</code>.</p>
 <p>With it all setup we are now ready to incorporate <code>wandb</code> into our code. The interface is fairly simple, and
     the <a href="https://docs.wandb.ai">docs</a> are fairly well written to get you through the exercises (HINT: the two methods
     you need to call are <code>wandb.init</code> and <code>wandb.log</code>).</p>
-</li>
+<ol>
 <li>
 <p>We have provided a sample script called <code>wandb_script.py</code> that agains implements a small classification model
-        on the iris-dataset. Add <code>wandb.init</code> and <code>wandb.log</code> in the appropriate places such that wandb is initilized
-        correctly and such that both <em>accuracy, f1, negative log likelihood</em> gets logged.</p>
+    on the iris-dataset. Add <code>wandb.init</code> and <code>wandb.log</code> in the appropriate places such that wandb is initilized
+    correctly and such that both <em>accuracy, f1, negative log likelihood</em> gets logged.</p>
 </li>
 <li>
 <p>When you are done, try running the script:</p>
-<div class="language-text highlight"><pre><span></span><code>```bash
-python wandb_script.py
-```
-
-In particular look at the output that gets written.
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>wandb_script.py
+</span></code></pre></div>
+<p>In particular look at the output that gets written.</p>
 </li>
 <li>
 <p>Next go to the webpage and lookup the project you created and logged something to. You should hopefully see one
-        experiment logged, which is not that interesting at the moment. However, we can checkout one important feature if
-        you go to the <em>Overview</em> tab for a specific experiment, like the image below:</p>
-<div class="language-text highlight"><pre><span></span><code>&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;../figures/weights_and_biases1.PNG&quot; width=&quot;600&quot;&gt;
-&lt;/p&gt;
-
-As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
-which should make it completely reproducible!
-</code></pre></div>
+    experiment logged, which is not that interesting at the moment. However, we can checkout one important feature if
+    you go to the <em>Overview</em> tab for a specific experiment, like the image below:</p>
+<p><p align="center">
+<a class="glightbox" href="../figures/weights_and_biases1.PNG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../figures/weights_and_biases1.PNG" width="600"></a>
+</p></p>
+<p>As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
+which should make it completely reproducible!</p>
+</li>
+</ol>
 </li>
 <li>
 <p>The <code>wandb_script.py</code> already supports using different models by passing them in as an argument when running the 
@@ -694,7 +691,7 @@ be logged about a single experiment.</p>
     given model. You can do this in scikit-learn, however, the core advantage of using wandb is that the hyperparameter
     optimization gets abstracted away, meaning that if you want to do hyperparameter sweeping for a framework other than
     scikit-learn it would still be the same code. We provide a sample script <code>wandb_sweep.py</code> that does hyperparameter
-    optimization for you. Try to go over it and try to make sense of what is going on. Afterward execute it</p>
+    optimization for you. Try to go over it and try to make sense of what is going on. Afterward, execute it</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>wandb_sweep.py
 </span></code></pre></div>
 <p>It will take some time to run (by default it runs 10 combinations of parameters). Afterwards, checkout the sweep
