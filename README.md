@@ -6,8 +6,10 @@ hide:
 
 # MLOps for data scientists
 
+Webpage: <https://skaftenicki.github.io/ku_devops/>
+
 <p align="center">
-  <img src="figures/4topics.png" width="300">
+<img src="figures/4topics.png" width="300">
 </p>
 
 This repository contains a small introduction to *machine learning operations* (MLOps) for data scientists. The four

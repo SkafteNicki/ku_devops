@@ -9,12 +9,12 @@ hide:
 # Experiment tracking
 
 Experiment logging or model monitoring is an important part of understanding what is going on with your model. It can
-help you debug your model and help tweak your models to perfection.
+help you debug your model and tweak your models to perfection.
 
 The most basic logging we can do is write the metric that our model is producing to the terminal or a file for later
 inspection. We can then also use tools such as [matplotlib](https://matplotlib.org/) for plotting our data, model fit,
 etc. This kind of workflow may be enough when doing smaller experiments or working alone on a project, but there is no
-way around using a proper experiment tracker and visualizer when doing large scale experiments in collaboration with
+way around using a proper experiment tracker and visualizer when doing large-scale experiments in collaboration with
 others. It especially becomes important when you want to compare performance between different runs.
 
 There exist many tools for logging your experiments, with some of them being:
@@ -25,13 +25,13 @@ There exist many tools for logging your experiments, with some of them being:
 * [Neptune](https://neptune.ai/)
 * [Weights and Bias](https://wandb.ai/site)
 
-All of the frameworks offers many of the same functionalities. We are going to use Weights and Bias (wandb), as it
-support everything we need in this course. Additionally, it is an excellent tool for collaboration and sharing of
+All of the frameworks offer many of the same functionalities. We are going to use Weights and Bias (wandb), as it 
+supports everything we need in this course. Additionally, it is an excellent tool for collaboration and sharing of
 results.
 
 ## Exercises
 
-1. Start by creating an account at [wandb](https://wandb.ai/site). I recommend using your github account but feel
+1. Start by creating an account at [wandb](https://wandb.ai/site). I recommend using your Github account but feel
     free to choose what you want. When you are logged in you should get an API key of length 40. Copy this for later
     use (HINT: if you forgot to copy the API key, you can find it under settings).
 
@@ -55,9 +55,7 @@ results.
     the [docs](https://docs.wandb.ai) are fairly well written to get you through the exercises (HINT: the two methods
     you need to call are `wandb.init` and `wandb.log`).
 
-
-
-   1. We have provided a sample script called `wandb_script.py` that agains implement a small classification model
+   1. We have provided a sample script called `wandb_script.py` that agains implements a small classification model
         on the iris-dataset. Add `wandb.init` and `wandb.log` in the appropriate places such that wandb is initilized
         correctly and such that both *accuracy, f1, negative log likelihood* gets logged.
 
@@ -80,7 +78,8 @@ results.
         As you hopefully can see, we get the exact python version, git commit, command used etc. to run the experiment,
         which should make it completely reproducible!
 
-5. The `wandb_script.py` already support using different models by passing them in as a argument when running the script
+5. The `wandb_script.py` already supports using different models by passing them in as an argument when running the 
+    script
 
     ```bash
     python wandb_script.py --model LogisticRegression
@@ -90,7 +89,7 @@ results.
     model we are using to wandb. Fill out the `config` arg in `wandb.init` with the model hyperparameter and run all
     combinations.
 
-6. If you managed to do the last part, you should hopefully have logged multiple experiment now. Look at your project
+6. If you managed to do the last part, you should hopefully have logged multiple experiments now. Look at your project
     page again in your webbrowser. You should see all your experiments. In particular checkout the `Table` tab (as in
     the image below) that can give a nice condensed overview of your experiments.
 
@@ -98,7 +97,7 @@ results.
     <img src="../figures/weights_and_biases2.PNG" width="1000">
     </p>
 
-7. Wandb can log a lot more than just scalar values. This could be a image (numpy array), a histogram or a matplotlib
+7. Wandb can log a lot more than just scalar values. This could be an image (numpy array), a histogram or a matplotlib
     figure. In all cases the logging is still going to use `wandb.log` but you need extra calls to `wandb.Image` etc.
     depending on what you choose to log. Add the following code to the `wandb_script.py` at the end and afterwards
     figure out how to call `wandb.log` to log the figure:
@@ -115,7 +114,7 @@ results.
     )
     ```
 
-8. Wandb have a nice integration with *scikit-learn* which can be very useful, so lets integrate that into our script
+8. Wandb has a nice integration with *scikit-learn* which can be very useful, so let's integrate that into our script
     for help look at this [guide](https://docs.wandb.ai/guides/integrations/scikit) and this
     [notebook](https://colab.research.google.com/github/wandb/examples/blob/master/colabs/scikit/Simple_Scikit_Integration.ipynb#scrollTo=ojLgOTVLEIxc)
     . Add the following code at the end of the script:
@@ -138,7 +137,7 @@ results.
     ```
 
     and run the script again (using whatever model you like). You may not understand what each command actually plot,
-    but hopefully this will be more clear later on. The important part is that you can see how a lot of information can
+    but hopefully, this will be more clear later on. The important part is that you can see how a lot of information can
     be logged about a single experiment.
 
 9. When calling `wandb.init` you have two arguments called `project` and `entity`. Make sure that you understand these
