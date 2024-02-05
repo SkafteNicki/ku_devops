@@ -121,7 +121,7 @@ cluster if you use virtual environments through conda.
     pip install <missing-package>
     ```
 
-   Until the script runs.
+    Until the script runs.
 
 7. The way we usually communicate to other people the requirements needed to run our Python applications/scripts are
     called `requirement.txt` files. These files are a simple list of dependencies with the format

@@ -4,13 +4,18 @@ hide:
   - toc
 ---
 
+<p align="center">
+<img src="figures/4topics.png" width="200">
+</p>
+
 # MLOps for data scientists
 
 Webpage: <https://skaftenicki.github.io/ku_devops/>
+To get started, clone the repository:
 
-<p align="center">
-<img src="figures/4topics.png" width="300">
-</p>
+```bash
+git clone https://github.com/SkafteNicki/ku_devops
+```
 
 This repository contains a small introduction to *machine learning operations* (MLOps) for data scientists. The four
 core topics covered are:

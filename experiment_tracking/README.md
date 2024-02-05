@@ -55,11 +55,11 @@ results.
     the [docs](https://docs.wandb.ai) are fairly well written to get you through the exercises (HINT: the two methods
     you need to call are `wandb.init` and `wandb.log`).
 
-   1. We have provided a sample script called `wandb_script.py` that agains implements a small classification model
+    1. We have provided a sample script called `wandb_script.py` that agains implements a small classification model
         on the iris-dataset. Add `wandb.init` and `wandb.log` in the appropriate places such that wandb is initilized
         correctly and such that both *accuracy, f1, negative log likelihood* gets logged.
 
-   2. When you are done, try running the script:
+    2. When you are done, try running the script:
 
         ```bash
         python wandb_script.py
@@ -67,7 +67,7 @@ results.
 
         In particular look at the output that gets written.
 
-   3. Next go to the webpage and lookup the project you created and logged something to. You should hopefully see one
+    3. Next go to the webpage and lookup the project you created and logged something to. You should hopefully see one
         experiment logged, which is not that interesting at the moment. However, we can checkout one important feature if
         you go to the *Overview* tab for a specific experiment, like the image below:
 
@@ -148,7 +148,7 @@ results.
     given model. You can do this in scikit-learn, however, the core advantage of using wandb is that the hyperparameter
     optimization gets abstracted away, meaning that if you want to do hyperparameter sweeping for a framework other than
     scikit-learn it would still be the same code. We provide a sample script `wandb_sweep.py` that does hyperparameter
-    optimization for you. Try to go over it and try to make sense of what is going on. Afterward execute it
+    optimization for you. Try to go over it and try to make sense of what is going on. Afterward, execute it
 
     ```bash
     python wandb_sweep.py
