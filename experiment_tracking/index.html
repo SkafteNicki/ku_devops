@@ -562,11 +562,11 @@
 <p><a class="glightbox" href="../figures/experiment_tracking.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Logo" src="../figures/experiment_tracking.png" width="200" /></a></p>
 <h1 id="experiment-tracking">Experiment tracking</h1>
 <p>Experiment logging or model monitoring is an important part of understanding what is going on with your model. It can
-help you debug your model and help tweak your models to perfection.</p>
+help you debug your model and tweak your models to perfection.</p>
 <p>The most basic logging we can do is write the metric that our model is producing to the terminal or a file for later
 inspection. We can then also use tools such as <a href="https://matplotlib.org/">matplotlib</a> for plotting our data, model fit,
 etc. This kind of workflow may be enough when doing smaller experiments or working alone on a project, but there is no
-way around using a proper experiment tracker and visualizer when doing large scale experiments in collaboration with
+way around using a proper experiment tracker and visualizer when doing large-scale experiments in collaboration with
 others. It especially becomes important when you want to compare performance between different runs.</p>
 <p>There exist many tools for logging your experiments, with some of them being:</p>
 <ul>
@@ -576,13 +576,13 @@ others. It especially becomes important when you want to compare performance bet
 <li><a href="https://neptune.ai/">Neptune</a></li>
 <li><a href="https://wandb.ai/site">Weights and Bias</a></li>
 </ul>
-<p>All of the frameworks offers many of the same functionalities. We are going to use Weights and Bias (wandb), as it
-support everything we need in this course. Additionally, it is an excellent tool for collaboration and sharing of
+<p>All of the frameworks offer many of the same functionalities. We are going to use Weights and Bias (wandb), as it 
+supports everything we need in this course. Additionally, it is an excellent tool for collaboration and sharing of
 results.</p>
 <h2 id="exercises">Exercises</h2>
 <ol>
 <li>
-<p>Start by creating an account at <a href="https://wandb.ai/site">wandb</a>. I recommend using your github account but feel
+<p>Start by creating an account at <a href="https://wandb.ai/site">wandb</a>. I recommend using your Github account but feel
     free to choose what you want. When you are logged in you should get an API key of length 40. Copy this for later
     use (HINT: if you forgot to copy the API key, you can find it under settings).</p>
 </li>
@@ -605,7 +605,7 @@ you need to manually close the connection using <code>wandb.finish()</code>.</p>
     you need to call are <code>wandb.init</code> and <code>wandb.log</code>).</p>
 </li>
 <li>
-<p>We have provided a sample script called <code>wandb_script.py</code> that agains implement a small classification model
+<p>We have provided a sample script called <code>wandb_script.py</code> that agains implements a small classification model
         on the iris-dataset. Add <code>wandb.init</code> and <code>wandb.log</code> in the appropriate places such that wandb is initilized
         correctly and such that both <em>accuracy, f1, negative log likelihood</em> gets logged.</p>
 </li>
@@ -631,7 +631,8 @@ which should make it completely reproducible!
 </code></pre></div>
 </li>
 <li>
-<p>The <code>wandb_script.py</code> already support using different models by passing them in as a argument when running the script</p>
+<p>The <code>wandb_script.py</code> already supports using different models by passing them in as an argument when running the 
+    script</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>wandb_script.py<span class="w"> </span>--model<span class="w"> </span>LogisticRegression
 </span></code></pre></div>
 <p>try running the script with all the different models. However, before doing so it is a good idea to also log the
@@ -639,7 +640,7 @@ model we are using to wandb. Fill out the <code>config</code> arg in <code>wandb
 combinations.</p>
 </li>
 <li>
-<p>If you managed to do the last part, you should hopefully have logged multiple experiment now. Look at your project
+<p>If you managed to do the last part, you should hopefully have logged multiple experiments now. Look at your project
     page again in your webbrowser. You should see all your experiments. In particular checkout the <code>Table</code> tab (as in
     the image below) that can give a nice condensed overview of your experiments.</p>
 <p><p align="center">
@@ -647,7 +648,7 @@ combinations.</p>
 </p></p>
 </li>
 <li>
-<p>Wandb can log a lot more than just scalar values. This could be a image (numpy array), a histogram or a matplotlib
+<p>Wandb can log a lot more than just scalar values. This could be an image (numpy array), a histogram or a matplotlib
     figure. In all cases the logging is still going to use <code>wandb.log</code> but you need extra calls to <code>wandb.Image</code> etc.
     depending on what you choose to log. Add the following code to the <code>wandb_script.py</code> at the end and afterwards
     figure out how to call <code>wandb.log</code> to log the figure:</p>
@@ -663,7 +664,7 @@ combinations.</p>
 </span></code></pre></div>
 </li>
 <li>
-<p>Wandb have a nice integration with <em>scikit-learn</em> which can be very useful, so lets integrate that into our script
+<p>Wandb has a nice integration with <em>scikit-learn</em> which can be very useful, so let's integrate that into our script
     for help look at this <a href="https://docs.wandb.ai/guides/integrations/scikit">guide</a> and this
     <a href="https://colab.research.google.com/github/wandb/examples/blob/master/colabs/scikit/Simple_Scikit_Integration.ipynb#scrollTo=ojLgOTVLEIxc">notebook</a>
     . Add the following code at the end of the script:</p>
@@ -680,7 +681,7 @@ combinations.</p>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">wandb</span><span class="o">.</span><span class="n">sklearn</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 </span></code></pre></div>
 <p>and run the script again (using whatever model you like). You may not understand what each command actually plot,
-but hopefully this will be more clear later on. The important part is that you can see how a lot of information can
+but hopefully, this will be more clear later on. The important part is that you can see how a lot of information can
 be logged about a single experiment.</p>
 </li>
 <li>
