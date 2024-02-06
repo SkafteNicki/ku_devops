@@ -623,12 +623,12 @@ be wrapped into its function that again needs to start with <code>test_</code>:<
     correctly works for three different values.</p>
 </li>
 <li>
-<p>Afterward lets test <code>np.linalg.eig</code> which calculates the eigen decomposition for a given matrix. You should test
-    the following:</p>
+<p>Afterward, let's test <code>np.linalg.eig</code> which calculates the eigen decomposition for a given matrix. You should 
+    test the following:</p>
 <ul>
-<li>For a given <code>(N,N)</code> matrix, that the shapes of the eigen vector matrix and eigen value matrix is also <code>(N,N)</code></li>
-<li>That for a randomly generated symmetric matrix, that all the eigenvalues are all real</li>
-<li>That for a positive semidefinite matrix, that all the eigvenvalues are real and non-negative</li>
+<li>For a given <code>(N,N)</code> matrix, the shapes of the eigenvector matrix and eigenvalue matrix is also <code>(N,N)</code></li>
+<li>For a randomly generated symmetric matrix, all the eigenvalues are real</li>
+<li>For a positive semidefinite matrix, all the eigenvalues are real and non-negative</li>
 </ul>
 </li>
 <li>
@@ -667,6 +667,32 @@ def test_valueerror_being_raised():
     over and over again for the different input, but <code>pytest</code> also has build in support for this with the use of the
     <a href="https://docs.pytest.org/en/6.2.x/parametrize.html">pytest.mark.parametrize decorator</a>.
     Implement a parametrized test and make sure that it runs for different inputs.</p>
+</li>
+<li>
+<p>(Optional) There is no way of measuring how good the test you have written is. However, what we can measure is the
+    <em>code coverage</em>. Code coverage refers to the percentage of your codebase that gets run when all your tests are 
+    executed. Having a high coverage at least means that all your code will run when executed.</p>
+<ol>
+<li>
+<p>Install coverage</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>coverage
+</span></code></pre></div>
+</li>
+<li>
+<p>Instead of running your tests directly with <code>pytest</code>, now do</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>coverage<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/
+</span></code></pre></div>
+</li>
+<li>
+<p>To get a simple coverage report simply type</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>coverage<span class="w"> </span>report
+</span></code></pre></div>
+<p>which will give you the percentage of cover in each of your files. You can also write</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>coverage<span class="w"> </span>report<span class="w"> </span>-m
+</span></code></pre></div>
+<p>to get the exact lines that were missed by your tests.</p>
+</li>
+</ol>
 </li>
 </ol>
 <p>That covers the basics of writing unittest for Python code. We want to note that <code>pytest</code> of course is not the only
