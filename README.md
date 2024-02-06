@@ -8,23 +8,20 @@ hide:
 <img src="figures/4topics.png" width="200">
 </p>
 
-# MLOps for data scientists
+# DevOps for data scientists
 
-Webpage: <https://skaftenicki.github.io/ku_devops/>. To get started, clone the repository:
+Webpage: <https://skaftenicki.github.io/ku_devops/>.
 
-```bash
-git clone https://github.com/SkafteNicki/ku_devops
-```
-
-This repository contains a small introduction to *machine learning operations* (MLOps) for data scientists. The four
-core topics covered are:
+This repository contains a small introduction to *developer operations* (DevOps) for students in the course
+[Grundlæggende Data Science (GDS)](https://kurser.ku.dk/course/ndab23000u/2023-2024) at Copenhagen University.
+The four core topics covered are:
 
 * [Virtual environments](https://github.com/SkafteNicki/ku_devops/tree/main/virtual_environments)
 * [Version control](https://github.com/SkafteNicki/ku_devops/tree/main/version_control)
 * [Experiment tracking](https://github.com/SkafteNicki/ku_devops/tree/main/experiment_tracking)
 * [Code testing](https://github.com/SkafteNicki/ku_devops/tree/main/code_testing)
 
-You are supposed to do them in the order listed. When doing the exercises, to maximize your MLOps/DevOps experience you 
+You are supposed to do them in the order listed. When doing the exercises, to maximize your DevOps experience you 
 should prioritize:
 
 1. Make yourself familiar with running commands in the terminal. The terminal can be a scary place, but it is an
@@ -40,9 +37,9 @@ should prioritize:
    [Visual Studio Code](https://code.visualstudio.com/) that are a lightweight editor, but through extensions can become 
    powerful. Otherwise, I also recommend [PyCharm](https://www.jetbrains.com/pycharm/).
 
-Why should a data scientist care about MLOps? Because MLOps provides processes and tools for creating *reproducible*
-experiments at scale when working with any kind of machine learning model. Being able to ensure that your experiments 
-are reproducible is important in the context of the scientific method:
+Why should a data scientist care about DevOps? Because DevOps provides processes and tools for creating *reproducible*
+experiments at scale when working with any kind of computer science/data science. Being able to ensure that your 
+experiments are reproducible is important in the context of the scientific method:
 
 <p align="center">
 <img src="figures/scientific_method.jpg" width="300">
