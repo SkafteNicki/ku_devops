@@ -34,19 +34,37 @@ will mean that even though we are executing the main script from project A's fol
 `torch==1.3.0` because that is the last version we installed because in both cases `pip` will install the package into
 the same environment, in this case, the global environment. Instead, if we did something like:
 
-```bash
-cd project_A  # move to project A
-python -m venv env  # create a virtual environment in project A
-source env/bin/activate  # activate that virtual environment
-pip install torch==1.3.0  # Install the old torch version into the virtual environment belonging to project A
-cd ../project_B  # move to project B
-python -m venv env  # create a virtual environment in project B
-source env/bin/activate  # activate that virtual environment
-pip install torch==2.0  # Install new torch version into the virtual environment belonging to project B
-cd ../project_A  # Move back to project A
-source env/bin/activate  # Activate the virtual environment belonging to project A
-python main.py  # Succeed in executing the main script from project A
-```
+=== "Unix/macOS"
+
+    ```bash
+    cd project_A  # move to project A
+    python -m venv env  # create a virtual environment in project A
+    source env/bin/activate  # activate that virtual environment
+    pip install torch==1.3.0  # Install the old torch version into the virtual environment belonging to project A
+    cd ../project_B  # move to project B
+    python -m venv env  # create a virtual environment in project B
+    source env/bin/activate  # activate that virtual environment
+    pip install torch==2.0  # Install new torch version into the virtual environment belonging to project B
+    cd ../project_A  # Move back to project A
+    source env/bin/activate  # Activate the virtual environment belonging to project A
+    python main.py  # Succeed in executing the main script from project A
+    ```
+
+=== "Windows"
+
+    ```bash
+    cd project_A  # Move to project A
+    python -m venv env  # Create a virtual environment in project A
+    .\env\Scripts\activate  # Activate that virtual environment
+    pip install torch==1.3.0  # Install the old torch version into the virtual environment belonging to project A
+    cd ../project_B  # Move to project B
+    python -m venv env  # Create a virtual environment in project B
+    .\env\Scripts\activate  # Activate that virtual environment
+    pip install torch==2.0  # Install new torch version into the virtual environment belonging to project B
+    cd ../project_A  # Move back to project A
+    .\env\Scripts\activate  # Activate the virtual environment belonging to project A
+    python main.py  # Succeed in executing the main script from project A
+    ```
 
 then we would be sure that `torch==1.3.0` is used when executing `main.py` in project A because we are using two
 different virtual environments. In the above case, we used the [venv module](https://docs.python.org/3/library/venv.html)

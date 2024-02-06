@@ -54,7 +54,7 @@ That said we will be using git and Github in these exercises.
 The most simple way to think of version control is that it is just nodes with lines connecting them
 
 <p align="center">
-  <img src="../figures/git_branch.png" width="1000," >
+<img src="../figures/git_branch.png" width="1000," >
 </p>
 
 Each node, which we call a *commit* is uniquely identified by a hash string. Each node stores what our code looked like 
