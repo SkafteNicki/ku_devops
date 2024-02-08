@@ -19,7 +19,7 @@ sweep_configuration = {
 
 
 def main():
-    run = wandb.init(project="iris")
+    run = wandb.init(project="iris-sweep")
 
     n_neighbors = run.config.n_neighbors
     weights = run.config.weights
