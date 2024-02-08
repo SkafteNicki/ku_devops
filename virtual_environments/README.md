@@ -126,7 +126,8 @@ cluster if you use virtual environments through conda.
 
     <details><summary>Solution!</summary> `pip freeze` </details>
 
-6. We are now ready to install some dependencies. Try to get the script `simple_classifier.py` running. Essentially,
+6. We are now ready to install some dependencies. Try to get the script `simple_classifier.py` running (you can find it
+    [here](https://github.com/SkafteNicki/ku_devops/blob/main/virtual_environments/simple_classifier.py)). Essentially,
     you need to iteratively call
 
     ```bash
