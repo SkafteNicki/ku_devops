@@ -47,5 +47,5 @@ def main():
 
 
 if __name__ == "__main__":
-    sweep_id = wandb.sweep(sweep=sweep_configuration, project="iris")
+    sweep_id = wandb.sweep(sweep=sweep_configuration, project="iris-sweep")
     wandb.agent(sweep_id, function=main, count=10)
